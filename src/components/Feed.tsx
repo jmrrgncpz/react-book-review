@@ -1,14 +1,15 @@
 import React, { useCallback, useRef } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faSpinner, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import ReviewCard from './ReviewCard';
-import { QueryFunctionContext, QueryKey, useMutation, useQuery, useQueryClient, UseQueryOptions } from 'react-query';
-import { useEffect, useState } from 'react';
+import { useMutation, useQuery, useQueryClient } from 'react-query';
+import { useState } from 'react';
 import { IReview } from '../models/IReview';
-import { bulkDelete, get, _delete } from "../services/ReviewService";
+import { bulkDelete, get } from "../services/ReviewService";
 import { toast } from "react-toastify";
-import _, { debounce } from "lodash";
+import { debounce } from "lodash";
 import { FeedProvider } from "../services/FeedContext";
+import Spinner from "../elements/Spinner";
 
 interface FeedProps {
     className?: string,
@@ -119,7 +120,7 @@ export default function Feed({ className }: FeedProps) {
                         isLoading ? (
                             Array.from(Array(3)).map((e, i) => {
                                 return <div key={`review-card-skeleton-${i}`} className="rounded-2xl bg-white shadow flex p-8 pb-36 w-full mb-4">
-                                    <FontAwesomeIcon icon={faSpinner} size="2x" spin />
+                                    <Spinner size="2x" />
                                 </div>
                             })
                         ) : isError ? (

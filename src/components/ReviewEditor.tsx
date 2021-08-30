@@ -1,9 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
-import { useState } from "react";
-import { useMutation, useQuery, useQueryClient } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import { IReview } from "../models/IReview";
 import { useForm } from 'react-hook-form';
 import ValidationText from '../elements/ValidationText';
@@ -25,7 +23,7 @@ export default function ReviewEditor({ className, review, closeFn }: IReviewEdit
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const isDraft = watch("isDraft");
 
-    const { mutateAsync, isLoading, isError, isSuccess } = useMutation((newReview: IReview) => submit(newReview), {
+    const { mutateAsync, isLoading, isSuccess } = useMutation((newReview: IReview) => submit(newReview), {
         onMutate: async newReview => {
             const queryKey = ['reviews', feedFilter];
 

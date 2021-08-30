@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import axios from '../axios';
-import { useQuery } from "react-query"
 import { IReview } from '../models/IReview';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faExternalLinkAlt, faStar, faTrashAlt, faWindowMaximize } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faExternalLinkAlt, faStar } from '@fortawesome/free-solid-svg-icons';
 import ReviewEditor from "./ReviewEditor";
-import { _delete } from "../services/ReviewService";
 import { Link } from "react-router-dom";
 import Chip from "../elements/Chip";
 

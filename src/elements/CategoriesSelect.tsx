@@ -1,7 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useQuery } from "react-query"
-import axios from "../axios"
 import { getCategories } from "../services/CategoryService";
 import Spinner from "./Spinner";
 

@@ -1,15 +1,10 @@
 import axios from '../axios';
 import { useQuery, useMutation, useQueryClient } from "react-query"
-import { ToastContainer, toast } from "react-toastify"
+import { ToastContainer } from "react-toastify"
 import Feed from '../components/Feed';
 import ReviewEditor from '../components/ReviewEditor';
 import { useState } from 'react';
-import { submit } from '../services/ReviewService';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import ReviewCard from '../components/ReviewCard';
-import ReviewPreview from '../components/ReviewPreview';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import Spinner from '../elements/Spinner';
 
 export default function Home() {
     const [isEditing, setIsEditing] = useState(false)
@@ -31,7 +26,7 @@ export default function Home() {
     if (isLoading) {
         return (
             <div className="flex justify-center items-center w-screen h-screen">
-                <FontAwesomeIcon size="3x" className="text-primary" spin icon={faSpinner} />
+                <Spinner size="3x" />
             </div>
         )
     }

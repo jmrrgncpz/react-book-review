@@ -1,10 +1,11 @@
-import { faChevronLeft, faSpinner, faStar, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faStar, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useCallback, useEffect, useState } from "react";
-import { useMutation, useQuery, useQueryClient } from "react-query";
+import { useCallback } from "react";
+import { useMutation, useQuery } from "react-query";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Chip from "../elements/Chip";
+import Spinner from "../elements/Spinner";
 import { getById, _delete } from "../services/ReviewService";
 
 const loadReview = async ({ queryKey }: any) => {
@@ -18,7 +19,7 @@ export default function ReviewPreview() {
     const history = useHistory();
     let { id }: any = useParams();
     const { isLoading, isError, data: review } = useQuery(["review", id], loadReview);
-    const { mutateAsync: deleteAsync, isLoading: isDeleteLoading, isError: isDeleteError, isSuccess } = useMutation((reviewId: number) => _delete(reviewId), {
+    const { mutateAsync: deleteAsync } = useMutation((reviewId: number) => _delete(reviewId), {
         onError: (err, newReview, context: any) => {
             toast.error("Save failed. Something went wrong.")
         },
@@ -35,8 +36,8 @@ export default function ReviewPreview() {
     if (isLoading) {
         return (
             <div className="review-preview-container bg-primary h-screen w-screen flex flex-row justify-center items-start">
-                <div className="w-1/2 rounded-2xl bg-white shadow-lg m-12 p-8 py-36 flex flex-row items-start">
-                    <FontAwesomeIcon icon={faSpinner} spin size="3x" />
+                <div className="w-1/2 rounded-2xl bg-white shadow-lg m-12 p-8 pb-64 flex flex-row items-start">
+                    <Spinner size="3x" />
                 </div>
             </div>
         )
