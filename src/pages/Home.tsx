@@ -62,7 +62,7 @@ export default function Home() {
                             xl:p-8 mb-8 2xl:mb-0 
                             flex flex-row justify-between items-center xl:grid grid-cols-1 xl:space-y-8 mr-8">
                             <h2 className="text-3xl font-bold">Welcome, you!</h2>
-                            <button onClick={() => setIsEditing(true)} className=" bg-primary py-2 px-8 rounded font-bold text-white shadow">New Review</button>
+                            <button onClick={() => setIsEditing(true)} className=" bg-primary py-2 px-8 rounded font-bold text-secondary xl:text-white shadow">New Review</button>
                         </aside>
                         <Feed className="w-full xl:w-1/2 2xl:w-3/4" />
                     </div>
@@ -71,7 +71,7 @@ export default function Home() {
                 {
                     isEditing ? (
                         <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-70 flex items-center justify-center">
-                            <ReviewEditor closeFn={() => setIsEditing(false)} className="m-auto max-h-screen" review={null} />
+                            <ReviewEditor closeFn={() => setIsEditing(false)} className="my-auto md:m-auto max-h-screen w-5/6 md:w-auto" review={null} />
                         </div>
                     )
                         : null

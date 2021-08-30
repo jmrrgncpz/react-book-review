@@ -59,16 +59,16 @@ export default function ReviewEditor({ className, review, closeFn }: IReviewEdit
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className={["bg-white rounded-2xl shadow-lg p-8 my-4", className].join(' ')}>
+        <form onSubmit={handleSubmit(onSubmit)} className={className}>
+            <div className="bg-white rounded-2xl shadow-lg p-8 my-4">
                 <h2 className="font-bold text-xs text-primary mb-4">
                     {
                         review ? "Edit Review: " + review.book.title : "New Review"
                     }
                 </h2>
                 <div className="flex-1">
-                    <header className="flex flex-row items-center justify-between mb-4">
-                        <div className="mr-8">
+                    <header className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4">
+                        <div className="md:mr-8">
                             <label className="flex flex-col">
                                 <span className="text-sm text-primary">Book title</span>
                                 <input

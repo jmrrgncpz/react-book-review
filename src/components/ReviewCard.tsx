@@ -20,9 +20,9 @@ export default function ReviewCard({ className, review, selectFn }: ReviewCardPr
     }
 
     return (
-        <div className={["review-card bg-white rounded-2xl shadow-lg p-8", className].join(' ')}>
+        <div className={["review-card bg-white rounded-2xl shadow-lg p-4 md:p-8", className].join(' ')}>
             <div className="flex flex-row items-stretch">
-                <div className="mr-8 flex flex-col">
+                <div className="mr-4 md:mr-8 flex flex-col">
                     <input className=" cursor-pointer mb-auto" data-testid="review-checkbox" type="checkbox" onChange={(e) => selectFn(e.target.checked, review)} />
                     <span className="cursor-pointer" onClick={() => setIsEditing(true)}>
                         <FontAwesomeIcon icon={faEdit} className="text-secondary hover:text-primary" />
@@ -43,7 +43,7 @@ export default function ReviewCard({ className, review, selectFn }: ReviewCardPr
                             </div>
                             <h3 className="text-primary text-2xl font-bold ">{review?.book.title}</h3>
                         </div>
-                        <p className="text-lg text-secondary font-bold ">
+                        <p className="text-lg text-secondary font-bold flex flex-row flex-nowrap items-center ">
                             <FontAwesomeIcon className="mr-2" icon={faStar} />
                             {review?.rating}/5
                         </p>

@@ -75,7 +75,7 @@ export default function Feed({ className }: FeedProps) {
 
     return (
         <main className={className}>
-            <div id="feed-controls" className="flex flex-row items-center justify-between">
+            <div id="feed-controls" className="flex flex-col-reverse md:flex-row md:items-center justify-between">
                 {
                     selectedReviews.length > 0 ? (
                         <div id="feed-multiselect-actions">
@@ -86,7 +86,7 @@ export default function Feed({ className }: FeedProps) {
                         </div>
                     )
                         : (
-                            <div id="feed-filters" className="flex flex-row">
+                            <div id="feed-filters" className="flex flex-row my-4 md:my-0">
                                 <button
                                     onClick={() => setFeedFilter({ ...feedFilter, isPublishedFilterActive: !feedFilter.isPublishedFilterActive })}
                                     className={[
@@ -115,7 +115,7 @@ export default function Feed({ className }: FeedProps) {
             </div>
 
             <FeedProvider value={feedFilter}>
-                <div id="feed" className="h-full overflow-y-auto mt-4">
+                <div id="feed" className="mt-4">
                     {
                         isLoading ? (
                             Array.from(Array(3)).map((e, i) => {
