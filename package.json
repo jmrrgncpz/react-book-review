@@ -1,0 +1,69 @@
+{
+  "name": "recrud",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^6.2.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@testing-library/react": "^12.0.0",
+    "axios": "^0.21.1",
+    "cra-template-typescript": "1.1.2",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.13.0",
+    "react-query": "^3.19.6",
+    "react-router-dom": "^5.2.1",
+    "react-scripts": "4.0.3",
+    "react-toastify": "^7.0.4",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "typescript": "^4.3.5",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "craco start",
+    "db:start": "json-server --watch db.json --port 3001",
+    "build": "craco build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "db:start:test": "json-server --watch db-test.json --port 3002",
+    "eject": "craco eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.15.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@types/babel__core": "^7.1.15",
+    "@types/jest": "^27.0.1",
+    "@types/lodash": "^4.14.172",
+    "@types/node": "^16.7.1",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.8",
+    "autoprefixer": "^9",
+    "cross-env": "^7.0.3",
+    "jest-environment-jsdom": "^27.0.6",
+    "nock": "^13.1.2",
+    "postcss": "^7",
+    "ts-jest": "^27.0.5"
+  }
+}

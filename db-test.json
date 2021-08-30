@@ -1,0 +1,36 @@
+{
+  "reviews": [
+    {
+      "book": {
+        "title": "DRAFT Kafka on the shore",
+        "description": "A description you've never read before.",
+        "category": "Sci-fi"
+      },
+      "statement": "Your review goes here",
+      "rating": 4,
+      "isDraft": true,
+      "id": 2
+    },
+    {
+      "book": {
+        "title": "Kafka on the shore",
+        "description": "A description you've never read before.",
+        "category": "Fantasy"
+      },
+      "statement": "Your review goes here",
+      "rating": 3,
+      "isDraft": false,
+      "id": 3
+    }
+  ],
+  "categories": [
+    "Fantasy",
+    "Sci-fi",
+    "Mystery",
+    "Thriller",
+    "Romance",
+    "Westerns",
+    "Dystopian",
+    "Contemporary"
+  ]
+}
